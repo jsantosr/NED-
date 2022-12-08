@@ -1,2 +1,1 @@
--Menú<br />
--Guardar configuración
+Config popup and save settings

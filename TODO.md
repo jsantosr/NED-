@@ -1,0 +1,2 @@
+-Menú<br />
+-Guardar configuración

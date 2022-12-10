@@ -1,4 +1,4 @@
-
+//webpackChunk_solo_mainapp[3][1][85491]['name'] indaga por ahi
 var autonext = true;
 var autoskipintro = true;
 var autofullscreen = true;
@@ -31,7 +31,9 @@ function control_fullscreen(){
         }
         if(jQuery(".fullscreen-icon").is(":visible")){
             console.log("Going to Full Screen");
+            simulateKeyPress('f');
             jQuery(".fullscreen-icon").click();
+            document.body.webkitRequestFullscreen();
             old_url = false;
             return true;
         }
@@ -47,12 +49,12 @@ function control_fullscreen(){
 
         setTimeout(function(){
             if(jQuery(".button-play--default").attr('data-gv2elementkey') == 'playNext') {
-                if(hasNumber(jQuery(".button-play--default p").html())) {
+                //if(hasNumber(jQuery(".button-play--default p").html())) {
                     fullscreen = detect_fs();
                     old_url = window.location.pathname;
                     console.log("Going to Next");
                     jQuery(".button-play--default").click();
-                }
+                //}
             }
         },500);
     }
@@ -85,6 +87,14 @@ function detect_fs() {
 
     return undefined;
 }
+
+function simulateKeyPress(character) {
+    jQuery.event.trigger({
+        type: 'keypress',
+        which: character.charCodeAt(0)
+    });
+}
+
 
 function hasNumber(myString) {
 

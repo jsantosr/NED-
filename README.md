@@ -6,4 +6,3 @@ Features:<br>
 <li>
 Auto Skip Intro</li>
 <li>Auto Play Next Episode</li>
-<li>Fullscreen Lose Prevention</li>
